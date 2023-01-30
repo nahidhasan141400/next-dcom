@@ -3,7 +3,11 @@ import connectionDB from "../../../database/connection.js";
 
 
 export default async function handler(req,res) {
-  const connection = await connectionDB();
+  const rescon = await connectionDB();
+  if(rescon.er){
+    return res.send({err:"data base not connected",rescon})
+  }
+  const {connection} = rescon;
   const [data] = await connection.execute('SELECT * FROM `admins` WHERE 1');
     
 
