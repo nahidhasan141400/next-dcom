@@ -37,6 +37,7 @@ To learn more about Next.js, take a look at the following resources:
   https://daisyui.com/docs/colors/
   https://tailwindcomponents.com/component/sopping-cart
   https://codepen.io/collection/DqLkab
+  https://mambaui.com/components/stats
 
 ## Deploy on Vercel
 
