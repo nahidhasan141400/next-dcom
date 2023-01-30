@@ -31,6 +31,7 @@ To learn more about Next.js, take a look at the following resources:
 - [ui component](https://merakiui.com/components/) - UI component .
 - [ui component](https://dev.to/cruip/25-places-where-you-can-get-free-tailwind-css-components-47lm#Cruip%20Free%20Components) - UI component resw.
   You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+  https://daisyui.com/docs/colors/
 
 ## Deploy on Vercel
 
