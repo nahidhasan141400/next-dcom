@@ -1,3 +1,4 @@
+import Footer from "../components/Footer/Fotter";
 import Navbar from "../components/nav/Navbar";
 const Layout = ({children}) => {
     console.dir(children)
@@ -7,6 +8,7 @@ const Layout = ({children}) => {
         <Navbar/>
 
         {children}
+        <Footer/>
     </main>
 
   )
