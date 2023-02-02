@@ -3,9 +3,9 @@
   height: 100%;
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  animation: slide 15s linear infinite;
+  animation: slide 25s linear infinite;
 }
 
 @keyframes slide {
@@ -13,6 +13,6 @@
     left: 0;
   }
   100% {
-    left: -100%;
+    left: -1700px;
   }
 }

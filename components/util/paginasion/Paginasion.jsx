@@ -1,4 +1,8 @@
-<div className="flex">
+import React from 'react'
+
+const Paginasion = () => {
+  return (
+    <div className="flex mx-auto text-center w-full justify-center">
   <a
     href="#"
     className="px-4 py-2 mx-1 text-gray-500 capitalize bg-white rounded-md cursor-not-allowed dark:bg-gray-800 dark:text-gray-600"
@@ -82,3 +86,7 @@
     </div>
   </a>
 </div>
+  )
+}
+
+export default Paginasion
