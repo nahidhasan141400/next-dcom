@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../../../layout/main'
 
-const index = () => {
+const Index = () => {
   return (
     <Layout>
 
@@ -80,4 +80,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Index

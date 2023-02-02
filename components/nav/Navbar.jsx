@@ -52,7 +52,7 @@ export default function Navbar() {
                   className="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400"
                   aria-label="toggle menu"
                 >
-                  <Bars3Icon className="h-6 h-6 text-gray-500" />
+                  <Bars3Icon className="h-6 text-gray-500" />
                 </button>
               </div>
             </div>
@@ -82,12 +82,11 @@ export default function Navbar() {
                     Cart
                   </a>
                 </Link>
-                <a
-                  className="my-2 text-sm leading-5 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:underline md:mx-4 md:my-0"
-                  href="#"
-                >
-                  Login
-                </a>
+                <Link href="/login">
+                  <a className="cursor-pointer my-2 text-sm leading-5 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:underline md:mx-4 md:my-0">
+                    Login
+                  </a>
+                </Link>
               </div>
 
               <div className="my-4 md:hidden">
