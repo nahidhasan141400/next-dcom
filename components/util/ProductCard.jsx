@@ -1,7 +1,10 @@
+import Link from "next/link";
+
 const ProductCard = ({name,img}) => {
   return (
+    <Link href='products/12334'>
     <article className="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl hover:transform hover:scale-105 duration-300 ">
-      <a href="#">
+      <a className="cursor-pointer">
         <div className="relative flex items-end overflow-hidden rounded-xl">
           <img src={img} className="relative h-72 w-full object-cover" alt="Hotel Photo" />
           <div className="absolute bottom-3 left-3 inline-flex items-center rounded-lg bg-white p-2 shadow-md">
@@ -24,7 +27,7 @@ const ProductCard = ({name,img}) => {
           <div className="mt-3 flex items-end justify-between">
             <p>
               <span className="text-lg font-bold text-blue-500">$850</span>
-              <span className="text-sm text-slate-400">/night</span>
+              <span className="text-sm text-slate-400"></span>
             </p>
 
             <div className="flex items-center space-x-1.5 rounded-lg bg-blue-500 px-4 py-1.5 text-white duration-100 hover:bg-blue-600">
@@ -49,6 +52,8 @@ const ProductCard = ({name,img}) => {
         </div>
       </a>
     </article>
+    </Link>
+    
   );
 };
 

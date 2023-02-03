@@ -2233,6 +2233,11 @@ sqlstring@^2.3.2:
   resolved "https://registry.npmjs.org/sqlstring/-/sqlstring-2.3.3.tgz"
   integrity sha512-qC9iz2FlN7DQl3+wjwn3802RTyjCx7sDvfQEXchwa6CWOx07/WVfh91gBmQ9fahw8snwGEWU3xGzOt4tFyHLxg==
 
+ssr-window@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/ssr-window/-/ssr-window-4.0.2.tgz#dc6b3ee37be86ac0e3ddc60030f7b3bc9b8553be"
+  integrity sha512-ISv/Ch+ig7SOtw7G2+qkwfVASzazUnvlDTwypdLoPoySv+6MqlOV10VwPSE6EWkGjhW50lUmghPmpYZXMu/+AQ==
+
 stop-iteration-iterator@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/stop-iteration-iterator/-/stop-iteration-iterator-1.0.0.tgz"
@@ -2307,6 +2312,13 @@ supports-preserve-symlinks-flag@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
+
+swiper@^9.0.2:
+  version "9.0.2"
+  resolved "https://registry.yarnpkg.com/swiper/-/swiper-9.0.2.tgz#7acad3a875e415f2265aa8bb5786455917472bb1"
+  integrity sha512-6iGqr9OeEMU7KVfGxXNW+xhVWmqvVhtt+1nnqbZ0a0i1p/S1rXgr9cPD55k7DFxeOojVHkiEqmsubaP3NgWwUQ==
+  dependencies:
+    ssr-window "^4.0.2"
 
 synckit@^0.8.4:
   version "0.8.4"

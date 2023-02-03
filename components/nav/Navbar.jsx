@@ -7,7 +7,7 @@ import { Bars3Icon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 
 const catagory = ["silk", "New", "Men", "offer", "Women", "kids"];
 
-export default function Navbar() {
+export default function Navbar({catlist}) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -105,7 +105,8 @@ export default function Navbar() {
             </div>
           </div>
 
-          <div className="py-3 mt-3 -mx-3 overflow-y-auto whitespace-nowrap text-center scroll-hidden">
+          {
+            catlist?<div className="py-3 mt-3 -mx-3 overflow-y-auto whitespace-nowrap text-center scroll-hidden">
             {catagory.map((e, i) => {
               return (
                 <Link href="/" key={i}>
@@ -115,7 +116,8 @@ export default function Navbar() {
                 </Link>
               );
             })}
-          </div>
+          </div>:""
+          }
         </div>
       </nav>
     </>

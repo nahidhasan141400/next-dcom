@@ -79,14 +79,14 @@ const Fotter = () => {
             <hr className="my-6 border-gray-200 md:my-8 dark:border-gray-700" />
 
             <div className="flex items-center justify-between">
-            <a href="#">
+            {/* <a href="#">
                 <img
                 className="w-auto h-10"
                 src="/img/logo/logo.png"
                 alt=""
                 />
-            </a>
-            <p className="text-sm text-gray-600 dark:text-gray-300">© Copyright 2023. All Rights Reserved to Mehromah. Develop by Dewan ICT</p>
+            </a> */}
+            <p className="text-sm text-gray-600 dark:text-gray-300">© Copyright 2023. All Rights Reserved to Slim sliks. Develop by Dewan ICT</p>
             <div className="flex -mx-2">
                 <a
                 href="#"
