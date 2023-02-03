@@ -38,6 +38,8 @@ To learn more about Next.js, take a look at the following resources:
   https://tailwindcomponents.com/component/sopping-cart
   https://codepen.io/collection/DqLkab
   https://mambaui.com/components/stats
+  https://shuffle.dev/components/tailwind/uinel/ecommerce-products
+  https://fancytailwind.com/categories/#ecommerce-ui
 
 ## Deploy on Vercel
 
