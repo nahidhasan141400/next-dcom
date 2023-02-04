@@ -1,4 +1,5 @@
 import Add from "../../components/Add/Add";
+import CataAdd from "../../components/cataAdd/cataAdd";
 import Future from "../../components/future/future";
 import Hero from "../../components/Hero/Hero";
 import ProductCatagory from "../../components/productCat/ProductCatagory";
@@ -11,7 +12,7 @@ const index = () => {
   return (
     <Layout catlist={true}>
       <Hero />
-      <cataAdd />
+      <CataAdd />
       <Status />
       <Add />
       <Titel text="Top sells" />
