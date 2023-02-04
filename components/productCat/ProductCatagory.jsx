@@ -1,4 +1,4 @@
-
+import Link from "next/link"
 
 
 
@@ -19,7 +19,9 @@ const ProductCatagory = () => {
         {/* :TITLE */}
         <div className="flex justify-between">
         <h2 className="text-2xl lg:text-3xl text-black font-bold">Shop by Category</h2>
-          <a href="#"> see all</a>  
+        <Link href={'/categories'}>
+          <a className="cursor-pointer"> see all</a>  
+        </Link>
         </div>
 
         {/* :CATEGORIES */}

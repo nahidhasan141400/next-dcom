@@ -22,11 +22,11 @@ const ProductCard = ({name,img}) => {
 
         <div className="mt-1 p-2">
           <h2 className="text-slate-700">{name}</h2>
-          <p className="mt-1 text-sm text-slate-400">Lisbon, Portugal</p>
+          <p className="mt-1 text-sm text-slate-400">orginal silk</p>
 
           <div className="mt-3 flex items-end justify-between">
             <p>
-              <span className="text-lg font-bold text-blue-500">$850</span>
+              <span className="text-lg font-bold text-blue-500"><span className="text-3xl relative top-1">৳</span> 850</span>
               <span className="text-sm text-slate-400"></span>
             </p>
 

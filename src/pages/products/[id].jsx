@@ -34,7 +34,7 @@ const product = {
     { src: "/img/product/pr (1).jpeg", alt:"Teapot model"  },
     { src: "/img/product/pr (2).jpeg", alt:"Teapot to pour water"  },
     { src: "/img/product/pr (6).jpg", alt:"Teapot for breakfast"  },
-    { src: "/img/product/pr (4).jpeg", alt:"Teapot on warming machine"  },
+    { src: "/img/product/pr (4).jpeg", alt:"Teapot on warming machine"  }
   ]
 } 
 
@@ -74,9 +74,9 @@ const ProductsWithID = () => {
           <div className="mt-6 mx-auto">
             <ul className="grid grid-flow-col auto-cols-fr gap-4">
               {product.pictures
-                .slice(0,4) // Here you can manage the number of pictures displayed
+                .slice(0,10) // Here you can manage the number of pictures displayed
                 .map((picture, index) => (
-                <li key={picture.alt} className={`col-span-1 p-1 w-16 rounded border-2 ${index === mainPicture ? "border-blue-600" : "border-transparent"}`}>
+                <li key={index} className={`col-span-1 p-1 w-16 rounded border-2 ${index === mainPicture ? "border-blue-600" : "border-transparent"}`}>
                   <button type="button" className="block h-full rounded overflow-hidden" onClick={() => setMainPicture(index)}>
                     <img src={picture.src} alt={picture.alt} className="object-contain" />
                   </button>

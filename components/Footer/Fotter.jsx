@@ -3,21 +3,20 @@ const Fotter = () => {
     <>
       <div className="footer p-10 text-black">
         <div>
-          <span className="footer-title">Services</span>
-          <a className="link link-hover">Branding</a>
-          <a className="link link-hover">Design</a>
-          <a className="link link-hover">Marketing</a>
-          <a className="link link-hover">Advertisement</a>
+          <span className="footer-title">INFORMATION</span>
+          <a className="link link-hover">Seller Policy</a>
+          <a className="link link-hover">Return Policy</a>
+          <a className="link link-hover">Support Policy</a>
+          <a className="link link-hover">Terms & Conditions</a>
         </div>
         <div>
-          <span className="footer-title">Company</span>
+          <span className="footer-title">USEFULL LINKS</span>
+          <a className="link link-hover">Home</a>
           <a className="link link-hover">About us</a>
           <a className="link link-hover">Contact</a>
-          <a className="link link-hover">Jobs</a>
-          <a className="link link-hover">Press kit</a>
         </div>
         <div>
-          <span className="footer-title">Legal</span>
+          <span className="footer-title">Quick Links</span>
           <a className="link link-hover">Terms of use</a>
           <a className="link link-hover">Privacy policy</a>
           <a className="link link-hover">Cookie policy</a>
