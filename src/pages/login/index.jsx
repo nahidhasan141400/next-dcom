@@ -56,12 +56,14 @@ const Index = () => {
                   />
                 </div>
                 <div className="mb-6">
-                  <button
-                    type="button"
-                    className="w-full px-3 py-4 text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:bg-indigo-600 focus:outline-none"
-                  >
-                    Sign in
-                  </button>
+                  <Link href={"/user"}>
+                      <button
+                        type="button"
+                        className="w-full px-3 py-4 text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:bg-indigo-600 focus:outline-none"
+                      >
+                        Sign in
+                      </button>
+                  </Link>
                 </div>
                 <p className="text-sm text-center text-gray-400">
                   Don&#x27;t have an account yet?

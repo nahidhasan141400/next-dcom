@@ -45,7 +45,7 @@ const Index = () => {
                 tab==="update"?<ChangeInfo/>:""
             }
             {
-                tab==="info"?<UserInfo/>:""
+                tab==="info"?<UserInfo setpage={detTab} />:""
             }
           </div>
         </div>
