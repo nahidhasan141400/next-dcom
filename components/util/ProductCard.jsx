@@ -1,10 +1,18 @@
 import Link from "next/link";
 
+import { useSelector } from 'react-redux';
+
 const ProductCard = ({name,img}) => {
+
+  const {color} = useSelector((state)=> state.Theme)
+
   return (
-    <Link href='products/12334'>
+   
     <article className="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl hover:transform hover:scale-105 duration-300 ">
+      <dir className="text-red-500 bg-red-500 hover:bg-red-900"></dir>
+      <dir className="text-blue-500 bg-blue-500 hover:bg-blue-900"></dir>
       <a className="cursor-pointer">
+      <Link href='products/12334'>
         <div className="relative flex items-end overflow-hidden rounded-xl">
           <img src={img} className="relative h-72 w-full object-cover" alt="Hotel Photo" />
           <div className="absolute bottom-3 left-3 inline-flex items-center rounded-lg bg-white p-2 shadow-md">
@@ -19,18 +27,23 @@ const ProductCard = ({name,img}) => {
             <span className="ml-1 text-sm text-slate-400">4.9</span>
           </div>
         </div>
-
+      
+    </Link>
         <div className="mt-1 p-2">
+        <Link href='products/123342'>
+          <div>
+
           <h2 className="text-slate-700">{name}</h2>
           <p className="mt-1 text-sm text-slate-400">orginal silk</p>
-
+          </div>
+          </Link>
           <div className="mt-3 flex items-end justify-between">
             <p>
-              <span className="text-lg font-bold text-blue-500"><span className="text-3xl relative top-1">৳</span> 850</span>
+              <span className={`text-lg font-bold text-${color}-500`}><span className="text-3xl relative top-1">৳</span> 850</span>
               <span className="text-sm text-slate-400"></span>
             </p>
 
-            <div className="flex items-center space-x-1.5 rounded-lg bg-blue-500 px-4 py-1.5 text-white duration-100 hover:bg-blue-600">
+            <div className={`flex items-center space-x-1.5 rounded-lg bg-${color}-500 px-4 py-1.5 text-white duration-100 hover:bg-${color}-900`}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -52,7 +65,6 @@ const ProductCard = ({name,img}) => {
         </div>
       </a>
     </article>
-    </Link>
     
   );
 };

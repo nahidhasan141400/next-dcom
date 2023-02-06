@@ -1,22 +1,32 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import ChangeInfo from "../../../components/user/changeInfo/ChangeInfo";
 import UserInfo from "../../../components/user/info/UserInfo";
 import Layout from "../../../layout/main";
-
+import { change } from "../../../store/Theme";
 const Index = () => {
     const [tab ,detTab] = useState("info");
+    const {color} = useSelector((state)=> state.Theme)
+    const dispatch = useDispatch()
+  const name = "red"
+      const handler = (col)=>{
+          dispatch(change(col))
+      }
+
+
   return (
     <Layout>
+      <div className="hidden text-red-600 "></div>
       <div className="container  mx-auto min-h-screen w-full relative">
         {/* user head start */}
         <div className="w-full py-2 bg-gray-100 my-3 rounded-lg shadow-sm flex flex-col md:flex-row">
           <div className="p-5 bg-gray-50 m-3 rounded-xl shadow-md flex-1">
-            <h1 className="text-3xl capitalize text-blue-600">
-              nahid hasan sagar
+            <h1 className={`text-3xl capitalize text-${color}-600`}>
+              nahid hasan sagar {color}
             </h1>
             <p>nahidhasan141400@gmail.com</p>
           </div>
-          <div className="p-5 m-3 rounded-xl  flex-1 text-right">
+          <div className="p-5 m-3 rounded-xl text-red-800  flex-1 text-right">
             <div>
               <span>
                 Total orders: <span className="text-gray-600">20</span>
@@ -46,6 +56,9 @@ const Index = () => {
             }
             {
                 tab==="info"?<UserInfo setpage={detTab} />:""
+            }
+            {
+                tab==="setting"? (<> <button onClick={()=>{handler("red")}} className="px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">red</button> <button onClick={()=>{handler("blue")}} className="px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">blue</button> </>) :""
             }
           </div>
         </div>
