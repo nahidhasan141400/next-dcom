@@ -1,13 +1,15 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-const ChangeInfo = () => {
+const ChangePassword = () => {
   const { color } = useSelector((s) => s.Theme);
   return (
     <div>
-      <section className={`max-w-4xl p-6 mx-auto bg-white shadow-red-300 rounded-md md:shadow-md dark:bg-gray-800`}>
+      <section
+        className={`max-w-4xl p-6 mx-auto bg-white  rounded-md md:shadow-md mt-2 md:ring-1 ring-${color}-400`}
+      >
         <h2 className="text-lg font-semibold text-gray-700 capitalize dark:text-white">
-          Update user information
+          Change password
         </h2>
 
         <form>
@@ -17,7 +19,7 @@ const ChangeInfo = () => {
                 className="text-gray-700 dark:text-gray-200"
                 for="username"
               >
-                Name
+                New Password
               </label>
               <input
                 id="username"
@@ -31,7 +33,7 @@ const ChangeInfo = () => {
                 className="text-gray-700 dark:text-gray-200"
                 for="emailAddress"
               >
-                Email Address
+                Confirm New Password
               </label>
               <input
                 id="emailAddress"
@@ -45,7 +47,7 @@ const ChangeInfo = () => {
                 className="text-gray-700 dark:text-gray-200"
                 for="password"
               >
-                phone
+                Current Password
               </label>
               <input
                 id="password"
@@ -54,7 +56,6 @@ const ChangeInfo = () => {
               />
             </div>
           </div>
-          
 
           <div className="flex justify-end mt-6">
             <button
@@ -69,4 +70,4 @@ const ChangeInfo = () => {
   );
 };
 
-export default ChangeInfo;
+export default ChangePassword;

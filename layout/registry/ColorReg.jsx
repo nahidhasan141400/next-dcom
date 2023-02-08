@@ -1,25 +1,24 @@
-import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import ChangeColor from "../../../components/user/ChangeColor/ChangeColor";
-import ChangeInfo from "../../../components/user/changeInfo/ChangeInfo";
-import ChangePassword from "../../../components/user/ChangePassword/ChangePassword";
-import UserInfo from "../../../components/user/info/UserInfo";
-import Order from "../../../components/user/Order/Order";
-import Layout from "../../../layout/main";
-const Index = () => {
-  const [tab, detTab] = useState("info");
-  const [color, setcolor] = useState("blue");
-  const theme = useSelector((state) => state.Theme);
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 
-  const name = "red";
+import { change } from "../../store/Theme";
+
+
+const ColorReg = () => {
+  const dispatch = useDispatch();
+  const handler = (col) => {
+    localStorage.setItem("color", col);
+    dispatch(change(col));
+  };
   useEffect(()=>{
-    setcolor(theme.color)
-  },[theme.color])
-
+    const locCol = localStorage.getItem("color");
+    if(locCol){
+        handler(locCol);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[])
   return (
-    <Layout>
-      <div className="hidden text-red-600 ">
-      <div>
+    <div>
         <div className='text-green-900'></div>
         <div className='text-green-800'></div>
         <div className='text-green-700'></div>
@@ -549,96 +548,7 @@ const Index = () => {
         <div className='border-violet-100'></div>
         <div className='border-violet-50'></div>
     </div>
-      </div>
-      <div className="container  mx-auto min-h-screen w-full relative">
-        {/* user head start */}
-        <div className="w-full py-2 bg-gray-100 my-3 rounded-lg shadow-sm flex flex-col md:flex-row">
-          <div
-            className={`p-5 bg-gray-50 m-3 rounded-xl shadow-md flex-1 shadow-${color}-200`}
-          >
-            <h1 className={`text-3xl capitalize text-${color}-600`}>
-              nahid hasan sagar
-            </h1>
-            <p>nahidhasan141400@gmail.com</p>
-          </div>
-          <div className="p-5 m-3 rounded-xl text-gray-800  flex-1 text-right">
-            <div>
-              <span>
-                Total orders: <span className="text-gray-600">20</span>
-              </span>
-            </div>
-            <div>
-              <span>
-                Completed orders: <span className="text-gray-600">3</span>
-              </span>
-            </div>
-          </div>
-        </div>
-        {/* user head start */}
-        <div className="w-full">
-          <div className="w-full mx-auto flex justify-center">
-            <div className="tabs md:tab-lg">
-              <a
-                onClick={() => {
-                  detTab("info");
-                }}
-                className={`tab tab-bordered ${
-                  tab === "info" ? "tab-active" : ""
-                }`}
-              >
-                information
-              </a>
-              <a
-                onClick={() => {
-                  detTab("update");
-                }}
-                className={`tab tab-bordered ${
-                  tab === "update" ? "tab-active" : ""
-                }`}
-              >
-                update
-              </a>
-              <a
-                onClick={() => {
-                  detTab("setting");
-                }}
-                className={`tab tab-bordered ${
-                  tab === "setting" ? "tab-active" : ""
-                }`}
-              >
-                settings
-              </a>
-              <a
-                onClick={() => {
-                  detTab("orders");
-                }}
-                className={`tab tab-bordered ${
-                  tab === "orders" ? "tab-active" : ""
-                }`}
-              >
-                Orders 
-              </a>
-            </div>
-          </div>
+  )
+}
 
-          <div className="w-full relative">
-            {tab === "update" ? <ChangeInfo /> : ""}
-            {tab === "info" ? <UserInfo setpage={detTab} /> : ""}
-            {tab === "orders" ? <Order /> : ""}
-            {tab === "setting" ? (
-              <>
-                
-                <ChangeColor />
-                <ChangePassword/>
-              </>
-            ) : (
-              ""
-            )}
-          </div>
-        </div>
-      </div>
-    </Layout>
-  );
-};
-
-export default Index;
+export default ColorReg

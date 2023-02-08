@@ -5,7 +5,6 @@ const Hero = () => {
     const {color} = useSelector((state)=> state.Theme)
   return (
     <header className="bg-white dark:bg-gray-900 border-red-400">
-
     <div className=" text-red-500 bg-red-600"></div>
     <div className="container px-6 py-16 mx-auto">
         <div className="items-center lg:flex">

@@ -1,6 +1,7 @@
 import React from "react";
-
+import { useSelector } from "react-redux";
 const Moduls = ({ id }) => {
+  const {color} = useSelector((s)=>s.Theme)
   return (
     <>
       <input type="checkbox" id={id} className="modal-toggle" />
@@ -30,7 +31,7 @@ const Moduls = ({ id }) => {
             <label htmlFor={id} className="btn">
               closed
             </label>
-            <button className="btn bg-blue-400 hover:bg-blue-300 border-none text-gray-800 hover:shadow-lg">
+            <button className={`btn bg-${color}-400 hover:bg-${color}-300 border-none text-gray-800 hover:shadow-lg`}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

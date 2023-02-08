@@ -1,12 +1,15 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import Table from "./Table";
 
+
 const UserInfo = ({setpage}) => {
+  const {color} = useSelector((s)=>s.Theme)
   return (
     <div className="w-full relative p-4 py-3 flex flex-col md:flex-row">
       <div className="flex-1 p-3 bg-gray-100 rounded-xl shadow-md m-1 relative">
         <div>
-          <p className="w-full text-center text-lg text-blue-500 capitalize">
+          <p className={`w-full text-center text-lg text-${color}-500 capitalize`}>
             user information
           </p>
         </div>
@@ -30,7 +33,7 @@ const UserInfo = ({setpage}) => {
           <span className="text-sm md:text-lg ">01234567890</span>
         </div>
         <div className="w-full text-right">
-          <button onClick={()=>{setpage("update")}} className="btn bg-blue-400 hover:bg-blue-300 border-none text-gray-800 hover:shadow-lg">
+          <button onClick={()=>{setpage("update")}} className={`btn bg-${color}-400 hover:bg-${color}-600 border-none text-gray-800 hover:shadow-lg`}>
             {" "}
             <span className="pr-2">
               <svg
@@ -55,8 +58,8 @@ const UserInfo = ({setpage}) => {
       </div>
       <div className="flex-1 w-full p-3 bg-blue-50 m-1 rounded-xl shadow-md">
         <div className="w-full flex justify-between">
-          <p className="text-lg text-blue-500 capitalize">Shipping Address</p>
-          <button className="btn btn-sm bg-blue-400 hover:bg-blue-300 border-none text-gray-800 hover:shadow-lg">
+          <p className={`text-lg text-${color}-500 capitalize`}>Shipping Address</p>
+          <button className={`btn btn-sm bg-${color}-400 hover:bg-${color}-300 border-none text-gray-800 hover:shadow-lg`}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
