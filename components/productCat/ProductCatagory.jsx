@@ -1,9 +1,11 @@
-import Link from "next/link"
-
+import Link from "next/link";
+import { useSelector } from "react-redux";
 
 
 const ProductCatagory = () => {
 
+  const {color} = useSelector((state)=> state.Theme)
+  
   const categories = [
     { id: 1, name: "IT & Tech", href: "#linkToCategory", picture: "https://fancytailwind.com/static/keyboard1-d324995c7d24b66f6935a11f1afcd6e7.jpg" },
     { id: 2, name: "Accessories", href: "#linkToCategory", picture: "https://fancytailwind.com/static/watch5-a86e63e37a603823384a28ed21b5bd30.jpg" },
@@ -32,7 +34,7 @@ const ProductCatagory = () => {
                 {/* ::Background Image */}
                 <img src={category.picture} alt="" className="absolute inset-0 w-full h-full object-contain object-center" />
                 {/* ::Overlay */}
-                <div className="absolute inset-0 w-full h-full bg-gradient-to-t from-gray-100 via-blue-200" />
+                <div className={`absolute inset-0 w-full h-full bg-gradient-to-t from-gray-100 via-${color}-200`} />
                 {/* ::Category Name */}
                 <h3 className="relative text-center text-sm sm:text-base lg:text-lg  text-black font-semibold tracking-wide antialiased">{category.name}</h3>
               </a>

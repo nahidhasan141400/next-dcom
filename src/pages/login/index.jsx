@@ -1,7 +1,9 @@
 import Link from "next/link";
 import React from "react";
+import { useSelector } from "react-redux";
 
 const Index = () => {
+const {color} = useSelector((state)=> state.Theme)
   return (
     <>
       <div className="flex items-center min-h-screen bg-white dark:bg-gray-900">
@@ -42,7 +44,7 @@ const Index = () => {
                     </label>
                     <a
                       href="#!"
-                      className="text-sm text-gray-400 focus:outline-none focus:text-indigo-500 hover:text-indigo-500 dark:hover:text-indigo-300"
+                      className={`text-sm text-gray-400 focus:outline-none focus:text-${color}-500 hover:text-${color}-500 dark:hover:text-indigo-300`}
                     >
                       Forgot password?
                     </a>
@@ -59,7 +61,7 @@ const Index = () => {
                   <Link href={"/user"}>
                       <button
                         type="button"
-                        className="w-full px-3 py-4 text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:bg-indigo-600 focus:outline-none"
+                        className={`w-full px-3 py-4 text-white bg-${color}-500 rounded-md hover:bg-${color}-600 focus:bg-indigo-600 focus:outline-none`}
                       >
                         Sign in
                       </button>

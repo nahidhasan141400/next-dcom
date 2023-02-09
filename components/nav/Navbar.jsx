@@ -1,7 +1,7 @@
+import { Bars3Icon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { useState } from "react";
-
-import { Bars3Icon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
+import { useSelector } from "react-redux";
 
 // '@heroicons/react/24/outline'
 
@@ -9,6 +9,7 @@ const catagory = ["silk", "New", "Men", "offer", "Women", "kids"];
 
 export default function Navbar({catlist}) {
   const [open, setOpen] = useState(false);
+  const {color} = useSelector((state)=> state.Theme)
 
   return (
     <>
@@ -49,7 +50,7 @@ export default function Navbar({catlist}) {
                     setOpen(!open);
                   }}
                   type="button"
-                  className="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400"
+                  className={`text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400`}
                   aria-label="toggle menu"
                 >
                   <Bars3Icon className="h-6 text-gray-500" />
@@ -66,24 +67,24 @@ export default function Navbar({catlist}) {
             >
               <div className="flex flex-col md:flex-row md:mx-1">
               <Link href="/">
-                  <a className="cursor-pointer my-2 text-sm leading-5 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:underline md:mx-4 md:my-0">
+                  <a className={`cursor-pointer my-2 text-sm leading-5 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-${color}-600 dark:hover:text-${color}-400 hover:underline md:mx-4 md:my-0`}>
                     Home
                   </a>
                 </Link>
 
                 <Link href="/products">
-                  <a className="cursor-pointer my-2 text-sm leading-5 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:underline md:mx-4 md:my-0">
+                  <a className={`cursor-pointer my-2 text-sm leading-5 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-${color}-600 dark:hover:text-${color}-400 hover:underline md:mx-4 md:my-0`}>
                     Products
                   </a>
                 </Link>
 
                 <Link href="/cart">
-                  <a className="cursor-pointer my-2 text-sm leading-5 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:underline md:mx-4 md:my-0">
+                  <a className={`cursor-pointer my-2 text-sm leading-5 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-${color}-600 dark:hover:text-${color}-400 hover:underline md:mx-4 md:my-0`}>
                     Cart
                   </a>
                 </Link>
                 <Link href="/login">
-                  <a className="cursor-pointer my-2 text-sm leading-5 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:underline md:mx-4 md:my-0">
+                  <a className={`cursor-pointer my-2 text-sm leading-5 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-${color}-600 dark:hover:text-${color}-400 hover:underline md:mx-4 md:my-0`}>
                     Login
                   </a>
                 </Link>
@@ -110,7 +111,7 @@ export default function Navbar({catlist}) {
             {catagory.map((e, i) => {
               return (
                 <Link href="/" key={i}>
-                  <span className="mx-4 text-sm leading-5 cursor-pointer text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-yellow-600 dark:hover:text-blue-400 md:my-0">
+                  <span className={`mx-4 text-sm leading-5 cursor-pointer text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-yellow-600 dark:hover:text-${color}-400 md:my-0`}>
                     {e}
                   </span>
                 </Link>

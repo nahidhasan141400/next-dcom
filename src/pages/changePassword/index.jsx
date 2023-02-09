@@ -1,7 +1,9 @@
 import Link from 'next/link';
 import React from 'react';
+import { useSelector } from "react-redux";
 
 const Index = () => {
+const {color} = useSelector((state)=> state.Theme)
   return (
     <>
       <div className="flex items-center min-h-screen bg-white dark:bg-gray-900">
@@ -50,13 +52,13 @@ const Index = () => {
                     name="password"
                     id="password"
                     placeholder="Confirm Password"
-                    className="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
+                    className={`w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500`}
                   />
                 </div>
                 <div className="mb-6">
                   <button
                     type="button"
-                    className="w-full px-3 py-4 text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:bg-indigo-600 focus:outline-none"
+                    className={`w-full px-3 py-4 text-white bg-${color}-500 rounded-md hover:bg-${color}-600 focus:bg-${color}-800 focus:outline-none`}
                   >
                     Change Password
                   </button>
@@ -64,7 +66,7 @@ const Index = () => {
                 <p className="text-sm text-center text-gray-400">
                   Don&#x27;t want to change yet?
                   <Link href="/logout">
-                    <a className="text-indigo-400 focus:outline-none focus:underline focus:text-indigo-500 dark:focus:border-indigo-800">
+                    <a className={`text-${color}-400 focus:outline-none focus:underline focus:text-${color}-500 dark:focus:border-${color}-800`}>
                       logout
                     </a>
                   </Link>

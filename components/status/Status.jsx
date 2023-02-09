@@ -1,7 +1,10 @@
+import { useSelector } from "react-redux";
 const Status = () => {
+
+const {color} = useSelector((state)=> state.Theme)
   return (
     <div className="w-full text-center p-5 mb-6">
-      <div className="sm:stats shadow-xl  shadow-blue-100 ring-1 ring-blue-200 ">
+      <div className={`sm:stats shadow-xl  shadow-${color}-100 ring-1 ring-${color}-200 `}>
         <div className="stat place-items-center">
           <div className="stat-title">Products</div>
           <div className="stat-value">31K</div>

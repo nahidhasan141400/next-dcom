@@ -1,4 +1,7 @@
+import { useSelector } from "react-redux";
+
 const Fotter = () => {
+  const {color} = useSelector((state)=> state.Theme)
   return (
     <>
       <div className="footer p-10 text-black">
@@ -24,7 +27,7 @@ const Fotter = () => {
       </div>
       <footer className="footer footer-center p-4 bg-base-300 text-base-content">
         <div>
-          <p>Copyright © 2023 - All right reserved by Slim silks. design and develop by <a href="https://dewanict.com/" className="text-blue-600 hover:text-blue-800"> dewan ICT </a></p>
+          <p>Copyright © 2023 - All right reserved by Slim silks. design and develop by <a href="https://dewanict.com/" className={`text-${color}-600 hover:text-${color}-800`}> dewan ICT </a></p>
         </div>
       </footer>
     </>

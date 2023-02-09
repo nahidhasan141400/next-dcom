@@ -1,4 +1,8 @@
+import { useSelector } from "react-redux";
 const car = () => {
+
+
+
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -37,6 +41,8 @@ const calender = () => {
   };
 
 const Service = () => {
+
+  const {color} = useSelector((state)=> state.Theme)
   const guarantees = [
     { id: 1, details: "Free shipping. For real.", icon: car },
     { id: 2, details: "No questions asked returns", icon: chack },
@@ -53,8 +59,8 @@ const Service = () => {
               key={service.id}
               className="flex-shrink-0 group m-5 px-3 inline-flex items-center space-x-2 cursor-default"
             >
-              <Icon className="w-7 h-7 text-indigo-500" />
-              <span className="text-base text-black font-bold group-hover:text-indigo-500">
+              <Icon className={`w-7 h-7 text-${color}-500`} />
+              <span className={`text-base text-black font-bold hover:text-${color}-500`}>
                 {service.details}
               </span>
             </div>

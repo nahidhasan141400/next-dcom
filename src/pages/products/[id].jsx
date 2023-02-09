@@ -1,6 +1,7 @@
 
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
+import { useSelector } from "react-redux";
 
 
 
@@ -41,6 +42,8 @@ const product = {
 
 const ProductsWithID = () => {
 
+  const {color} = useSelector((state)=> state.Theme)
+
   const router = useRouter()
   const { id } = router.query
 
@@ -76,7 +79,7 @@ const ProductsWithID = () => {
               {product.pictures
                 .slice(0,10) // Here you can manage the number of pictures displayed
                 .map((picture, index) => (
-                <li key={index} className={`col-span-1 p-1 w-16 rounded border-2 ${index === mainPicture ? "border-blue-600" : "border-transparent"}`}>
+                <li key={index} className={`col-span-1 p-1 w-16 rounded border-2 ${index === mainPicture ? `border-${color}-600` : "border-transparent"}`}>
                   <button type="button" className="block h-full rounded overflow-hidden" onClick={() => setMainPicture(index)}>
                     <img src={picture.src} alt={picture.alt} className="object-contain" />
                   </button>
@@ -102,7 +105,7 @@ const ProductsWithID = () => {
             <ul className="my-5 flex flex-col space-y-2">
               {product.features.map(feature => (
                 <li key={feature.name} className="inline-flex items-center space-x-2 text-gray-500">
-                  <span className="w-1.5 h-1.5 rounded-full bg-blue-600" />
+                  <span className={`w-1.5 h-1.5 rounded-full bg-${color}-600`} />
                   <span className="text-sm font-semibold">{feature.name}:</span>
                   <span className="text-sm font-normal">{feature.details}</span>
                 </li>
@@ -148,7 +151,7 @@ const ProductsWithID = () => {
               {product.price}
             </span>
             {/* :::Add to cart button */}
-            <button type="button" className="m-2.5 py-1.5 px-5 inline-flex items-center rounded-md bg-blue-500 text-base text-white font-semibold uppercase whitespace-nowrap hover:bg-blue-600">
+            <button type="button" className={`m-2.5 py-1.5 px-5 inline-flex items-center rounded-md bg-${color}-500 text-base text-white font-semibold uppercase whitespace-nowrap hover:bg-${color}-600`}>
               
               Add to cart
             </button>

@@ -1,7 +1,11 @@
-import React from 'react'
-import Layout from '../../../layout/main'
+import React from 'react';
+import Layout from '../../../layout/main';
+
+import { useSelector } from "react-redux";
 
 const Index = () => {
+
+  const {color} = useSelector((state)=> state.Theme)
   return (
     <Layout>
 
@@ -56,7 +60,7 @@ const Index = () => {
           <p className="text-sm text-gray-700">including VAT</p>
         </div>
       </div>
-      <button className="mt-6 w-full rounded-md bg-blue-500 py-1.5 font-medium text-blue-50 hover:bg-blue-600">Check out</button>
+      <button className={`mt-6 w-full rounded-md bg-${color}-500 py-1.5 font-medium text-${color}-50 hover:bg-${color}-600`}>Check out</button>
     </div>
   </div>
 </div>
