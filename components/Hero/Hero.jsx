@@ -1,8 +1,17 @@
+import { useEffect } from "react";
 import { useSelector } from "react-redux";
+import { useLoader } from "../../components/util/Loader/Loader";
 import Slide from "./slider/Slide";
 
 const Hero = () => {
     const {color} = useSelector((state)=> state.Theme)
+    const setLoad = useLoader()
+    // const {setLoad} = useLoader()
+    
+    useEffect(()=>{
+        setLoad(false)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[])
   return (
     <header className="bg-white dark:bg-gray-900 border-red-400">
     <div className=" text-red-500 bg-red-600"></div>
@@ -10,7 +19,7 @@ const Hero = () => {
         <div className="items-center lg:flex">
             <div className="w-full lg:w-1/2">
                 <div className="lg:max-w-lg">
-                    <h1 className="text-3xl font-semibold text-gray-800 dark:text-white lg:text-4xl">Slim Silks <span className={`text-${color}-500`}>for trend</span></h1>
+                    <h1 className="text-3xl font-semibold text-gray-800 dark:text-white lg:text-4xl">Slim Silks <span onClick={()=>{setLoad(true)}} className={`text-${color}-500`}>for trend</span></h1>
 
                     <p className="mt-3 text-gray-600 dark:text-gray-400">be the first to knows when our <span className={`font-medium text-${color}-500`}>Brand</span> is live</p>
 

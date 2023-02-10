@@ -6,7 +6,7 @@ const ChangePassword = () => {
   return (
     <div>
       <section
-        className={`max-w-4xl p-6 mx-auto bg-white  rounded-md md:shadow-md mt-2 md:ring-1 ring-${color}-400`}
+        className={`max-w-4xl p-6 mx-auto   rounded-md md:shadow-md mt-2 md:ring-1 ring-${color}-400`}
       >
         <h2 className="text-lg font-semibold text-gray-700 capitalize dark:text-white">
           Change password

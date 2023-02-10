@@ -2,6 +2,7 @@ import { Bars3Icon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import { useLoader } from "../util/Loader/Loader";
 
 // '@heroicons/react/24/outline'
 
@@ -10,6 +11,7 @@ const catagory = ["silk", "New", "Men", "offer", "Women", "kids"];
 export default function Navbar({catlist}) {
   const [open, setOpen] = useState(false);
   const {color} = useSelector((state)=> state.Theme)
+  const setLoad = useLoader()
 
   return (
     <>
@@ -66,19 +68,19 @@ export default function Navbar({catlist}) {
               } absolute inset-x-0 z-20 w-full px-6 py-2 transition-all duration-300 ease-in-out bg-white top-24 dark:bg-gray-800 md:mt-0 md:p-0 md:top-0 md:relative md:bg-transparent md:w-auto md:opacity-100 md:translate-x-0 md:flex md:items-center`}
             >
               <div className="flex flex-col md:flex-row md:mx-1">
-              <Link href="/">
+              <Link onClick={()=>{setLoad(true)}} href="/">
                   <a className={`cursor-pointer my-2 text-sm leading-5 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-${color}-600 dark:hover:text-${color}-400 hover:underline md:mx-4 md:my-0`}>
                     Home
                   </a>
                 </Link>
 
-                <Link href="/products">
+                <Link onClick={()=>{setLoad(true)}} href="/products">
                   <a className={`cursor-pointer my-2 text-sm leading-5 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-${color}-600 dark:hover:text-${color}-400 hover:underline md:mx-4 md:my-0`}>
                     Products
                   </a>
                 </Link>
 
-                <Link href="/cart">
+                <Link onClick={()=>{setLoad(true)}} href="/cart">
                   <a className={`cursor-pointer my-2 text-sm leading-5 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-${color}-600 dark:hover:text-${color}-400 hover:underline md:mx-4 md:my-0`}>
                     Cart
                   </a>

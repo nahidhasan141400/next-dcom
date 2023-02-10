@@ -5,11 +5,12 @@ const Layout = ({children,catlist = false}) => {
   return (
 
     <main>
+     
         <ColorReg/>
         <Navbar catlist={catlist}/>
-
         {children}
         <Footer/>
+     
     </main>
 
   )
