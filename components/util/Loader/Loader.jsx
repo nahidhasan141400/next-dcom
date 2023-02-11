@@ -1,3 +1,4 @@
+import Router from "next/router";
 import { createContext, useContext, useState } from "react";
 import { useSelector } from "react-redux";
 import style from "./l.module.scss";
@@ -14,7 +15,15 @@ import style from "./l.module.scss";
 const Loader = ({ children }) => {
   const { color } = useSelector((s) => s.Theme);
 
-  const [load, SetLoad] = useState(true);
+  const [load, SetLoad] = useState(false);
+
+
+  Router.events.on("routeChangeStart",()=>{
+   SetLoad(true)
+  })
+  Router.events.on("routeChangeComplete",()=>{
+   SetLoad(false)
+  })
 
   return (
     <Contextload.Provider value={SetLoad}>
