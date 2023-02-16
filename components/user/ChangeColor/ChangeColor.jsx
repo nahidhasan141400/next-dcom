@@ -3,25 +3,30 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 
 import { useSelector } from "react-redux";
+import { Curchange } from "../../../store/Curr";
 import { change } from "../../../store/Theme";
 
 const ChangeColor = () => {
-
-
-
   const { color } = useSelector((s) => s.Theme);
+
+  const { cur } = useSelector((s) => s.Curr);
   const dispatch = useDispatch();
   const handler = (col) => {
     localStorage.setItem("color", col);
     dispatch(change(col));
   };
-  useEffect(()=>{
+
+  const curhand = (st)=>{
+    localStorage.setItem("cur",st);
+    dispatch(Curchange(st));
+  }
+  useEffect(() => {
     const locCol = localStorage.getItem("color");
-    if(locCol){
-        handler(locCol);
+    if (locCol) {
+      handler(locCol);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div>
@@ -109,6 +114,37 @@ const ChangeColor = () => {
           title="Lime"
           className="radio checked:bg-lime-500 bg-lime-600 appearance-none mx-2"
         />
+      </div>
+      <p className="text-2xl pb-2">Currency USA</p>
+      <div className="w-48">
+      <div className="form-control">
+        <label className="label cursor-pointer">
+          <span className="label-text">NO</span>
+          <input
+            type="radio"
+            name="radio-10"
+            className="radio checked:bg-red-500 bg-red-500"
+            checked={!(cur=="US")}
+            onChange={() => {
+              curhand("NO");
+            }}
+          />
+        </label>
+      </div>
+      <div className="form-control">
+        <label className="label cursor-pointer">
+          <span className="label-text">YES</span>
+          <input
+            type="radio"
+            name="radio-10"
+            className="radio checked:bg-blue-500 bg-blue-500 "
+            checked={cur=="US"}
+            onChange={() => {
+              curhand("US");
+            }}
+          />
+        </label>
+      </div>
       </div>
     </div>
   );

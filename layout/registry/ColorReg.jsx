@@ -1,19 +1,31 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 
+import { Curchange } from "../../store/Curr";
 import { change } from "../../store/Theme";
+
 
 
 const ColorReg = () => {
   const dispatch = useDispatch();
+
+
   const handler = (col) => {
-    localStorage.setItem("color", col);
+    // localStorage.setItem("color", col);
     dispatch(change(col));
   };
+  const currHandler = (cur)=>{
+    dispatch(Curchange(cur))
+  }
+
   useEffect(()=>{
     const locCol = localStorage.getItem("color");
+    const locCur = localStorage.getItem("cur");
     if(locCol){
         handler(locCol);
+    }
+    if(locCur){
+      currHandler(locCur);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
