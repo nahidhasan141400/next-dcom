@@ -38,7 +38,6 @@ const CurrModal = () => {
                       type="radio"
                       name="radio-10"
                       className="radio checked:bg-red-500 bg-red-600"
-                      checked 
                       onClick={()=>{changeHandler("NO")}}
                     /> 
                   </label>                  
@@ -50,6 +49,7 @@ const CurrModal = () => {
                       type="radio"
                       name="radio-10"
                       className="radio checked:bg-blue-500 bg-blue-500"
+                      onClick={()=>{changeHandler("US")}}
                     />
                   </label>
                 </div>
