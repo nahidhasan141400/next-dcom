@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import Address from "./Address";
 import Table from "./Table";
 
 
@@ -59,7 +60,7 @@ const UserInfo = ({setpage}) => {
       <div className="flex-1 w-full p-3 bg-blue-50 m-1 rounded-xl shadow-md">
         <div className="w-full flex justify-between">
           <p className={`text-lg text-${color}-500 capitalize`}>Shipping Address</p>
-          <button className={`btn btn-sm bg-${color}-400 hover:bg-${color}-300 border-none text-gray-800 hover:shadow-lg`}>
+          <label htmlFor={"addadress"} className={`btn btn-sm bg-${color}-400 hover:bg-${color}-300 border-none text-gray-800 hover:shadow-lg`}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -75,8 +76,9 @@ const UserInfo = ({setpage}) => {
               />
             </svg>
             
-            add address
-          </button>
+            add addresse
+          </label>
+          <Address id={"addadress"}/>
         </div>
         <div>
           <Table />

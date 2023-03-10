@@ -44,3 +44,7 @@ body {
     width: 768px;
   }
 }
+
+.demo {
+  max-height: calc(100vh - 65px);
+}
