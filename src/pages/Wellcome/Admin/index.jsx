@@ -3,7 +3,13 @@ import Layout from './layout/Layout';
 
 const Index = () => {
   return (
-    <div><Layout/></div>
+    <div>
+      <Layout>
+        <div className='relative flex justify-between items-center flex-wrap'>
+
+        </div>
+      </Layout>
+    </div>
     
   )
 }

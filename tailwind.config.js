@@ -10,11 +10,10 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors:{
-        nahid:{
-          500:"#ff00bb"
-        }
-      }
+      colors: {
+        "dark-purple": "#081A51",
+        "light-white": "rgba(255,255,255,0.17)",
+      },
     },
   },
   plugins: [require("daisyui"), require('flowbite/plugin')],
