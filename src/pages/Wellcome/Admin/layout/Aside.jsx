@@ -1,16 +1,21 @@
 import React, { useState } from "react";
+import { BsArrowLeftCircleFill } from "react-icons/bs";
+import { GiAtSea } from "react-icons/gi";
+import { RiToolsFill, RiUserSettingsLine } from "react-icons/ri";
+
+import { RxActivityLog, RxAspectRatio, RxClipboardCopy, RxCodesandboxLogo, RxDesktop, RxMix } from "react-icons/rx";
 
 const Aside = () => {
   const [open, setOpen] = useState(true);
   const Menus = [
-    { title: "Dashboard", src: "Chart_fill" },
-    { title: "Inbox", src: "Chat" },
-    { title: "Accounts", src: "User", gap: true },
-    { title: "Schedule ", src: "Calendar" },
-    { title: "Search", src: "Search" },
-    { title: "Analytics", src: "Chart" },
-    { title: "Files ", src: "Folder", gap: true },
-    { title: "Setting", src: "Setting" },
+    { title: "Dashboard", src: RxActivityLog },
+    { title: "Orders", src: RxClipboardCopy },
+    { title: "Products", src: RxCodesandboxLogo, gap: true },
+    { title: "category", src: RxMix },
+    { title: "Front-End", src: RxDesktop ,gap:true},
+    { title: "Pages", src: RxAspectRatio },
+    { title: "Setting", src: RiToolsFill, gap: true },
+    { title: "User", src: RiUserSettingsLine },
   ];
   return (
     <div className="flex">
@@ -20,34 +25,22 @@ const Aside = () => {
         } bg-dark-purple h-screen p-5  pt-8 relative duration-300`}
       >
         <span
-          className={`absolute cursor-pointer -right-3 top-9 bg-slate-300 w-8 h-8 flex justify-center items-center rounded-full border-dark-purple
+          className={`absolute cursor-pointer -right-3 top-9 bg-slate-100 w-7 h-7 text-2xl flex justify-center items-center rounded-full border-dark-purple
            border-2   ${!open && "rotate-180"}`}
           onClick={() => setOpen(!open)}
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-6 h-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-            />
-          </svg>
+          <BsArrowLeftCircleFill />
         </span>
-       
 
         <div className="flex gap-x-4 items-center">
-          <img
-            src="./src/assets/logo.png"
-            className={`cursor-pointer duration-500 ${
+          <span
+            className={`cursor-pointer duration-500 bg-slate-100 p-1 text-2xl ${
               open && "rotate-[360deg]"
             }`}
-          />
+          >
+            <GiAtSea />
+          </span>
+
           <h1
             className={`text-white origin-left font-medium text-xl duration-200 ${
               !open && "scale-0"
@@ -61,11 +54,13 @@ const Aside = () => {
             <li
               key={index}
               className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 
-              ${Menu.gap ? "mt-9" : "mt-2"} ${
+              ${Menu.gap ? "mt-9 border-t border-slate-600" : "mt-2"} ${
                 index === 0 && "bg-light-white"
               } `}
             >
-              <img src={`./src/assets/${Menu.src}.png`} />
+              <span className="text-xl">
+                <Menu.src />
+              </span>
               <span className={`${!open && "hidden"} origin-left duration-200`}>
                 {Menu.title}
               </span>
@@ -73,7 +68,6 @@ const Aside = () => {
           ))}
         </ul>
       </div>
-     
     </div>
   );
 };
