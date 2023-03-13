@@ -1,13 +1,26 @@
+import { useRouter } from 'next/router';
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 
-const Navbar = () => {
+const Navbar = ({user}) => {
   const [avater, setAvater] = useState(false);
+  const router = useRouter()
+
+  const logout = ()=>{
+    document.cookie = "cart=''";
+    router.push('/');
+    setTimeout(()=>{
+      window.location.reload();
+    },2000)
+    toast.success("logout");
+
+  }
   return (
     <div className="w-full relative top-0 left-0 backdrop-blur-md text-underline h-16 flex justify-center items-center z-50">
       <div className=" relative w-full flex justify-between mx-auto px-5 py-3">
         <div>
           <h1 className="font-extrabold text-2xl text-slate-900">
-            Admin Dashboard
+            Welcome {user.name}
           </h1>
         </div>
         <div className="relative">
@@ -15,7 +28,7 @@ const Navbar = () => {
             onClick={() => {
               setAvater((s) => !s);
             }}
-            class="w-10 h-10 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500 bg-slate-500 hover:p-2 cursor-pointer"
+            className="w-10 h-10 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500 bg-slate-500 hover:p-2 cursor-pointer"
             src="/img/logo/logo.png"
             alt="Bordered avatar"
           />
@@ -77,7 +90,7 @@ const Navbar = () => {
               </li>
               <li className="my-2">
                 <a
-                  href="#"
+                  onClick={logout}
                   className="text-xl cursor-pointer text-slate-900 hover:text-slate-700 whitespace-nowrap flex items-center"
                 >
                   <span className="mr-1">

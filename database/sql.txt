@@ -1,0 +1,2 @@
+INSERT INTO `admin` (`id`, `name`, `user`, `email`, `password`, `session`, `status`, `phone`, `img`, `role`, `job`) VALUES (NULL, 'Nahid Hasan', 'nahid@admin.com', 'nahidhasan141400@gmail.com', '$2b$10$pk8JIeNPyFizJ4PKPnP2EuNSe681MSCZzbx2Ve4qqgnu5duh.9Sj6', '00000000000000000000', '1', '8801741013363', 'nophoto.png', '1', '10');
+

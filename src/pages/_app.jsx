@@ -1,4 +1,6 @@
 import { Provider } from "react-redux";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Loader from "../../components/util/Loader/Loader";
 import Store from "../../store/store";
 import "../styles/globals.scss";
@@ -8,6 +10,7 @@ export default function MyApp({ Component, pageProps }) {
     <>
       <Provider store={Store}>
         <Loader>
+          <ToastContainer/>
           <Component {...pageProps} />
         </Loader>
       </Provider>

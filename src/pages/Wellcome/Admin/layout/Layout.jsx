@@ -1,7 +1,7 @@
 import React from "react";
 import Aside from "./Aside";
 import Navbar from "./navbar";
-const Layout = ({ children }) => {
+const Layout = ({ children,user }) => {
   return (
     <div>
       {/* <div className='relative h-20'></div> */}
@@ -12,7 +12,7 @@ const Layout = ({ children }) => {
         </div>
         {/* body  */}
         <div className="relative flex-1 md:pl-0 pl-14">
-          <Navbar />
+          <Navbar user={user} />
           <div className="w-full overflow-y-auto overflow-x-hidden demo">
             {children}
           </div>

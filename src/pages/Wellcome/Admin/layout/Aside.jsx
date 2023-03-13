@@ -1,21 +1,22 @@
+import Link from "next/link";
+import { useRouter } from 'next/router';
 import React, { useState } from "react";
 import { BsArrowLeftCircleFill } from "react-icons/bs";
 import { GiAtSea } from "react-icons/gi";
 import { RiToolsFill, RiUserSettingsLine } from "react-icons/ri";
-
 import { RxActivityLog, RxAspectRatio, RxClipboardCopy, RxCodesandboxLogo, RxDesktop, RxMix } from "react-icons/rx";
-
 const Aside = () => {
+  const router = useRouter()
   const [open, setOpen] = useState(true);
   const Menus = [
-    { title: "Dashboard", src: RxActivityLog },
-    { title: "Orders", src: RxClipboardCopy },
-    { title: "Products", src: RxCodesandboxLogo, gap: true },
-    { title: "category", src: RxMix },
-    { title: "Front-End", src: RxDesktop ,gap:true},
-    { title: "Pages", src: RxAspectRatio },
-    { title: "Setting", src: RiToolsFill, gap: true },
-    { title: "User", src: RiUserSettingsLine },
+    { title: "Dashboard", src: RxActivityLog ,link:'/Wellcome/Admin'},
+    { title: "Orders", src: RxClipboardCopy,link:'/Wellcome/order' },
+    { title: "Products", src: RxCodesandboxLogo, gap: true ,link:'/Wellcome/Admin/Product'},
+    { title: "category", src: RxMix ,link:'/Wellcome/Admin/category' },
+    { title: "Front-End", src: RxDesktop ,gap:true ,link:'/Wellcome/frontend'},
+    { title: "Pages", src: RxAspectRatio ,link:'/Wellcome/page'},
+    { title: "Setting", src: RiToolsFill, gap: true ,link:'/Wellcome/setting' },
+    { title: "User", src: RiUserSettingsLine ,link:'/Wellcome/user' },
   ];
   return (
     <div className="flex">
@@ -51,20 +52,25 @@ const Aside = () => {
         </div>
         <ul className="pt-6">
           {Menus.map((Menu, index) => (
+            <Link key={index} href={Menu.link}>
             <li
-              key={index}
+              
               className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 
               ${Menu.gap ? "mt-9 border-t border-slate-600" : "mt-2"} ${
-                index === 0 && "bg-light-white"
+                router.asPath === Menu.link ? 'bg-light-white' : '' 
               } `}
             >
+              
               <span className="text-xl">
                 <Menu.src />
               </span>
               <span className={`${!open && "hidden"} origin-left duration-200`}>
                 {Menu.title}
               </span>
+            
+              
             </li>
+            </Link>
           ))}
         </ul>
       </div>
